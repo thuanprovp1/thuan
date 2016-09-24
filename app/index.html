@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <!--import css-->
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="resource/css/bootstrap.css">
+  <link rel="stylesheet" href="resource/css/etalage.css">
+  <link rel="stylesheet" href="resource/css/jquery.mmenu.all.css">
+  <link rel="stylesheet" href="resource/css/owl.carousel.css">
+  <link rel="stylesheet" href="resource/css/productviewgallery.css">
+  <link rel="stylesheet" href="resource/css/slider.css">
+  <link rel="stylesheet" href="resource/css/style.css">
+
+  <link rel="stylesheet" href="bower_components/datatables.net-dt/css/jquery.dataTables.css">       <!--css datatable-->
+  <!--end import css-->
+
+  <!--customer-->
+  <!--END Customer-->
+</head>
+<body>
+
+<div ui-view="navbar"></div>
+<div ui-view="side_bar"></div>
+<div ui-view="content"></div>
+<div ui-view="footer1"></div>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ng-view></div>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="app.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
+<!--import js-->
+
+<script src="resource/js/classie.js"></script>
+<script src="resource/js/cloud-zoom.1.0.3.min.js"></script>x
+<script src="resource/js/easing.js"></script>
+<script src="resource/js/jquery.eislideshow.js"></script>
+<script src="resource/js/jquery.etalage.min.js"></script>
+<script src="resource/js/jquery.fancybox.pack.js"></script>
+<script src="resource/js/jquery.mmenu.js"></script>
+<script src="resource/js/move-top.js"></script>
+<script src="resource/js/nav.js"></script>
+<script src="resource/js/owl.carousel.js"></script>
+<!--&lt;!&ndash;<script src="resource/js/productviewgallery.js"></script>&ndash;&gt;          trung với cái productview resource admin-->
+<script src="resource/js/responsiveslides.min.js"></script>
+<script src="resource/js/uisearch.js"></script>
+
+<!--JS ADMIN-->
+
+<!--end import js-->
+
+<!--import file src-->
+<script src="src/customer/home/home.controller.js"></script>
+<script src="src/customer/home/home.state.js"></script>
+<script src="src/customer/about/about.controller.js"></script>
+<script src="src/customer/about/about.state.js"></script>
+<script src="src/customer/account/account.controller.js"></script>
+<script src="src/customer/account/account.state.js"></script>
+<script src="src/customer/contact/contact.controller.js"></script>
+<script src="src/customer/contact/contact.state.js"></script>
+<script src="src/customer/product/product.controller.js"></script>
+<script src="src/customer/product/product.state.js"></script>
+<script src="src/customer/register/register.controller.js"></script>
+<script src="src/customer/register/register.state.js"></script>
+<script src="src/customer/single/single.controller.js"></script>
+<script src="src/customer/single/single.state.js"></script>
+<!--end import file src-->
+
+<!--import service-->
+<script src="src/customer/home/home.factory.js"></script>
+<script src="src/customer/account/account.factory.js"></script>
+<script src="src/customer/contact/contact.factory.js"></script>
+<script src="src/customer/product/product.factory.js"></script>
+<script src="src/customer/register/register.factory.js"></script>
+<script src="src/customer/single/single.factory.js"></script>
+<script src="src/admin/dashboard/dashboard.factory.js"></script>
+<script src="src/admin/table/table.factory.js"></script>
+<!--end service-->
+
+<!--ADMIN-->
+<script src="src/admin/admin.state.js"></script>
+<script src="src/admin/dashboard/dashboard.controller.js"></script>
+<script src="src/admin/dashboard/dashboard.state.js"></script>
+<script src="src/admin/celendar/celendar.controller.js"></script>
+<script src="src/admin/celendar/celendar.state.js"></script>
+<script src="src/admin/chart/chart.controller.js"></script>
+<script src="src/admin/chart/chart.state.js"></script>
+<script src="src/admin/file-manager/file.controller.js"></script>
+<script src="src/admin/file-manager/file.state.js"></script>
+<script src="src/admin/form/form.controller.js"></script>
+<script src="src/admin/form/form.state.js"></script>
+<script src="src/admin/login/login.controller.js"></script>
+<script src="src/admin/login/login.state.js"></script>
+<script src="src/admin/messager/messager.controller.js"></script>
+<script src="src/admin/messager/messager.state.js"></script>
+<script src="src/admin/table/table.controller.js"></script>
+<script src="src/admin/table/table.state.js"></script>
+<script src="src/admin/task/task.controller.js"></script>
+<script src="src/admin/task/task.state.js"></script>
+<script src="src/admin/ui/ui.controller.js"></script>
+<script src="src/admin/ui/ui.state.js"></script>
+<script src="src/admin/widget/widget.controller.js"></script>
+<script src="src/admin/widget/widget.state.js"></script>
+<!--END ADMIN-->
+<!--Import datatable-->
+<script src="src/datatable/datatable.js"></script>
+<!--END datatable-->
+
+<!--Datatales-->
+<script src="bower_components/datatables.net/js/jquery.dataTables.js"></script>
+<!--END Datatables-->
+</body>
+</html>

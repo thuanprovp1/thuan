@@ -1,0 +1,26 @@
+
+<body>
+<!--header-->
+<!---->
+<div class="product-grids">
+    <div class="container">
+        <div class="product-top">
+            <div class="col-md-4 grid-product-in" ng-repeat="product in products">
+                <div class=" product-grid">
+                    <a href="#single/id={{product.id}}"><img class="img-responsive " src="resource/images/pr.png" alt=""></a>
+                    <div class="shoe-in">
+                        <h6><a href="#single/id={{product.id}}">{{product.name}}</a></h6>
+                        <label>${{product.price}}</label>
+                        <a href="#single/id={{product.id}}" class="store">FIND A STORE</a>
+                    </div>
+
+                    <b class="plus-on">+</b>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!---->
+<!--footer-->
+</body>
