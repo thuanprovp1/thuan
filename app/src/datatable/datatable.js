@@ -8,6 +8,6 @@ angular.module('myApp')
                 'ajax':options.url,
                 'columns':options.columns,
                 'columnDefs':options.columnDefs
-            })
+            });
         };
     });

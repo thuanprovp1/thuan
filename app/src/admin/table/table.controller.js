@@ -15,17 +15,25 @@ angular.module('myApp')
                 {'title': 'Office', 'data': 'office'},
                 {'title': 'Extn', 'data': 'extn'},
                 {'title': 'Start date', 'data': 'start_date'},
-                {'title': 'Salary', 'data': 'salary'}
+                {'title': 'Salary', 'data': 'salary'},
+                {'title': 'Action', 'data': null}
             ],
             columnDefs: [
                 {
-                    "render": function ( data, type, row ) {
-                        return data;
+                    "render": function (data, type, row) {
+                        return '<button class="btn btn-danger" id="delete">Delete</button>'
+                             + '<button class="btn btn-info"   id="edit"  >Edit</button>'
                     },
-                    "targets": 0
+                    "targets": 6
                 }
             ]
         };
 
         DataTable.generateDataTable(options, angular.element('#example'));
+        options.delete = function (data) {
+            scope.delete(data);
+        };
+        $scope.delete = function (data) {
+            alert('delete' + data);
+        }
     });
