@@ -6,7 +6,6 @@ angular.module('myApp')
         RegisterFactory.fetchAllProducts()
             .then(function (response) {
                 $scope.products=response.data;
-                console.log($scope.products);
             })
             .catch(function () {
                 $scope.products=[];
