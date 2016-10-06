@@ -3,5 +3,5 @@
  */
 angular.module('myApp')
     .controller('TaskController',function ($scope) {
-
+        $scope.list=[];
     });

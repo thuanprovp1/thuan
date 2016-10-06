@@ -1,5 +1,7 @@
 angular.module('myApp')
     .controller('TableController', function ($scope, TableFactory, DataTable) {
+
+        //factory API
         TableFactory.fetchAllProducts()
             .then(function (response) {
                 $scope.products = response.data;
@@ -7,6 +9,8 @@ angular.module('myApp')
             .catch(function () {
                 $scope.products = [];
             });
+
+        //DataTables
         var options = {
             url: 'data-json/data.json',
             columns: [
@@ -21,19 +25,18 @@ angular.module('myApp')
             columnDefs: [
                 {
                     "render": function (data, type, row) {
-                        return '<button class="btn btn-danger" id="delete">Delete</button>'
-                             + '<button class="btn btn-info"   id="edit"  >Edit</button>'
+                        return '<button class="btn btn-danger" id="btn-delete">Delete</button>'
+                            + '<button class="btn btn-info"   id="btn-edit"  >Edit</button>'
                     },
                     "targets": 6
                 }
             ]
         };
-
         DataTable.generateDataTable(options, angular.element('#example'));
-        options.delete = function (data) {
-            scope.delete(data);
+
+        //resize kich thuoc cua cua so form
+        $scope.resizeWd = function () {
+            window.open("#admin/table-form", "_blank", "width=390, height=550");
         };
-        $scope.delete = function (data) {
-            alert('delete' + data);
-        }
+
     });
