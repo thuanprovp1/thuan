@@ -6,7 +6,7 @@ angular.module('myApp')
         SingleFactory.fetchAllProducts()
             .then(function (response) {
                 $scope.products=response.data;
-                $scope.item= $filter('filter')($scope.products, {id: $stateParams.id})[0];
+                $scope.item= $filter('filter')($scope.products, {_id: $stateParams.id})[0];
             })
             .catch(function () {
                 $scope.products=[];

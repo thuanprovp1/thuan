@@ -32,31 +32,44 @@
                         </div>
                     </div>
                     <div class="box-content">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Image url</th>
-                                <th>Price</th>
-                                <th>Command</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="product in products">
-                                <td>{{product.id}}</td>
-                                <td class="center"><a href="#single/id={{product.id}}">{{product.name}}</a></td>
-                                <td>{{product.url}}</td>
-                                <td class="center">{{product.price}}</td>
-                                <td>
-                                    <button class="btn btn-danger" ng-click=""><i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    </button>
-                                    <button class="btn btn-info" ng-click=""><i class="fa fa-pencil" aria-hidden="true"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <div style="overflow-x:auto">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Index</th>
+                                    <th>Barcode</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Category Id</th>
+                                    <th>User Id</th>
+                                    <th>Created Date</th>
+                                    <th>Modified_date</th>
+                                    <th>Command</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="product in products">
+                                    <td>{{$index +1}}</td>
+                                    <td>{{product.barcode}}</td>
+                                    <td class="center"><a href="#single/id={{product._id}}">{{product.name}}</a></td>
+                                    <td>{{product.price}}</td>
+                                    <td>{{product.category_id}}</td>
+                                    <td>{{product.user_id}}</td>
+                                    <td>{{product.created_date}}</td>
+                                    <td>{{product.modified_date}}</td>
+                                    <td>
+                                        <button class="btn btn-danger" ng-click="alertDelete()">
+                                            <a ng-href="http://localhost:8081/product/delete?id={{product._id}}" ng-click="refeshPage()">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                        </button>
+                                        <button class="btn btn-info" ng-click=""><i class="fa fa-pencil"
+                                                                                    aria-hidden="true"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class="pagination pagination-centered">
                             <ul>
                                 <li><a href="#">Prev</a></li>

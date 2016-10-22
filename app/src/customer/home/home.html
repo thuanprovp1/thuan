@@ -149,11 +149,11 @@
     <div class="content-grids">
 
         <div class="col-md-4 content-grid" ng-repeat="product in products | limitTo:3">
-            <a href="#single/id={{product.id}}" class="lot"><img class="img-responsive " ng-src="{{product.url}}" alt=""></a>
+            <a href="#single/id={{product._id}}" class="lot"><img class="img-responsive " ng-src="{{product.url_img}}" alt=""></a>
             <div class="shoe">
                 <p>{{product.name}}</p>
                 <label>${{product.price}}</label>
-                <a href="#single/id={{product.id}}">find a store</a>
+                <a href="#single/id={{product._id}}">find a store</a>
             </div>
             <div class="clearfix"></div>
             <b class="plus-in">+</b>

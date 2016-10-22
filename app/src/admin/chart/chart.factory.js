@@ -4,7 +4,7 @@
 angular.module('myApp')
     .factory('TableHangHoa', function ($http) {
         var fetchAllProducts=function () {
-            return $http.post('http://localhost:8081/product/create')
+            return $http.get('http://localhost:8081/product/fetch')
         };
         return {
             fetchAllProducts:fetchAllProducts

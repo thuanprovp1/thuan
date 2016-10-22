@@ -8,9 +8,9 @@
 //         }
 //     });
 angular.module('myApp')
-    .factory('IndexFactory', function ($http) {
+    .factory('GrouptypeFactory', function ($http) {
        var fetchAllProducts=function () {
-           return $http.get('http://localhost:8081/product/fetch')
+           return $http.get('http://localhost:8081/group-type/fetch')
        };
         return {
             fetchAllProducts:fetchAllProducts

@@ -8,9 +8,9 @@
 //         }
 //     });
 angular.module('myApp')
-    .factory('IndexFactory', function ($http) {
+    .factory('RoleFactory', function ($http) {
        var fetchAllProducts=function () {
-           return $http.get('http://localhost:8081/product/fetch')
+           return $http.get('http://localhost:8081/role/fetch')
        };
         return {
             fetchAllProducts:fetchAllProducts

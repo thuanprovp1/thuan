@@ -877,6 +877,8 @@ ul.messages li .message {
 }
 
 .box-content {
+	font-size:12px;
+	font-style:italic;
 	position: relative;
 	z-index: 50;
   	margin-top: -1px;
@@ -2430,7 +2432,7 @@ div.uploader{
 }
 
 .meter > span:after, 
-.animate > span > spans li.current {
+.animate > span > span li.current {
 }
 
 /* Star Rating
@@ -2585,7 +2587,7 @@ footer {
 
 .circleStatsItemBox input:focus {
 	outline: 0;
-	outline: thin dotted 0;
+	outline: thin dotted ;
   	-webkit-box-shadow: none;
        -moz-box-shadow: none;
          	box-shadow: none;
