@@ -21,6 +21,9 @@
 
             </div><!--/row-->
             <div class="row-fluid sortable">
+                <button type="button" class="btn btn-success">Add New</button>
+                <br />
+                <br />
                 <div class="box span12">
                     <div class="box-header">
                         <h2><i class="halflings-icon align-justify"></i><span class="break"></span>Danh Mục Hàng Hóa
@@ -59,7 +62,7 @@
                                     <td>{{product.modified_date}}</td>
                                     <td>
                                         <button class="btn btn-danger" ng-click="alertDelete()">
-                                            <a ng-href="http://localhost:8081/product/delete?id={{product._id}}" ng-click="refeshPage()">
+                                            <a style="color:#fff" ng-href="http://localhost:8081/product/delete?id={{product._id}}" ng-click="refeshPage()">
                                             <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                         </button>
                                         <button class="btn btn-info" ng-click=""><i class="fa fa-pencil"
