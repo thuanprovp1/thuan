@@ -5,7 +5,7 @@
     <div class="single">
         <div class="col-md-9 top-in-single">
             <div class="col-md-5 single-top">
-                <img ng-src="{{items.url_img}}" />
+                <img ng-src="{{items.url}}" />
             </div>
             <div class="col-md-7 single-top-in">
                 <div class="single-para">
@@ -47,15 +47,15 @@
                         </ul>
                     </div>
 
-                    <a href="resource/#" class="cart ">More details</a>
+                    <a href="/#" class="cart ">More details</a>
 
                 </div>
             </div>
             <div class="clearfix"></div>
             <div class="product-top">
-                <div class="col-md-4 grid-product-in" ng-repeat="product in products | limitTo:3">
+                <div class="col-md-4 grid-product-in" ng-repeat="product in products.data | limitTo:3">
                     <div class=" product-grid">
-                        <a href="#single/id={{product._id}}"><img class="img-responsive " ng-src="{{product.url_img}}" alt=""></a>
+                        <a href="#single/id={{product._id}}"><img class="img-responsive " ng-src="{{product.url}}" alt=""></a>
                         <div class="shoe-in">
                             <h6><a href="#single/id={{product._id}}">{{product.name}}</a></h6>
                             <label>$ {{product.price}}</label>
@@ -67,6 +67,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
+
         </div>
         <div class="col-md-3">
             <div class="single-bottom">
@@ -122,7 +123,7 @@
             <div class="single-bottom">
                 <h4>Product Categories</h4>
                 <div class="product-go" ng-repeat="product in products | limitTo:3">
-                    <img class="img-responsive fashion" ng-src="{{product.url_img}}" alt="">
+                    <img class="img-responsive fashion" ng-src="{{product.url}}" alt="">
                     <div class="grid-product">
                         <a href="#single/id={{product._id}}" class="elit">{{product.name}}</a>
                         <span class=" price-in"><small>{{product.price+2000}}</small> ${{product.price}}</span>

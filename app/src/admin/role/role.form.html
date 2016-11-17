@@ -12,34 +12,28 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="icon-home"></i>
-                    <a href="index.html">Home</a>
+                    <a href="#/admin">Home</a>
                     <i class="icon-angle-right"></i>
                 </li>
                 <li><a href="#">Tables</a></li>
             </ul>
             <!--<button class="btn btn-info" ng-click="resizeWd()">Add new</a></button></br></br>-->
             <button type="button" class="btn btn-success">Add New</button>
-            <br/>
-            <br/>
-
-            <!--Datatable-->
-            <div style="overflow-x: auto">
-                <table id="user_table" class="isplay" width="100%" d>
-                    <tr>
-                        <th>Id</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Role</th>
-                        <th>Create Date</th>
-                        <th>Modifined Date</th>
-                        <th>Action</th>
-                    </tr>
-                </table>
-            </div>
+<form style="position: relative;left:10px;width:300px" name="form-category">
+    <fieldset>
+        <legend>Add New</legend>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
         </div>
-        <!-- end: Content -->
-    </div><!--/#content.span10-->
-    <!--/fluid-row-->
+        <button type="submit" class="btn btn-primary" ng-click="">Submit</button>
+        <button class="btn btn-default" ng-click="">Cancel</button>
+    </fieldset>
+</form>
+</div>
+<!-- end: Content -->
+</div><!--/#content.span10-->
+<!--/fluid-row-->
 </div>
 
 <div class="clearfix"></div>

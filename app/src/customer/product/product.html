@@ -5,13 +5,13 @@
 <div class="product-grids">
     <div class="container">
         <div class="product-top">
-            <div class="col-md-4 grid-product-in" ng-repeat="product in products">
+            <div class="col-md-4 grid-product-in" ng-repeat="product in products.data">
                 <div class=" product-grid">
-                    <a href="#single/id={{product.id}}"><img class="img-responsive " ng-src="{{product.url_img}}" alt=""></a>
+                    <a href="#single/id={{product._id}}"><img class="img-responsive " ng-src="{{product.url}}" alt=""></a>
                     <div class="shoe-in">
-                        <h6><a href="#single/id={{product.id}}">{{product.name}}</a></h6>
+                        <h6><a href="#single/id={{product._id}}">{{product.name}}</a></h6>
                         <label>${{product.price}}</label>
-                        <a href="#single/id={{product.id}}" class="store">FIND A STORE</a>
+                        <a href="#single/id={{product._id}}" class="store">FIND A STORE</a>
                     </div>
                     <b class="plus-on">+</b>
                 </div>

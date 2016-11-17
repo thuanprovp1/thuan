@@ -1,7 +1,7 @@
 angular.module('myApp')
     .config(function ($stateProvider) {
         $stateProvider.state('user',{
-            parent:'admin',                 //thua ke thang admin.state.js
+            parent:'admin',                 //thua ke tu admin.state
             url:'/admin/user',              //link ket noi toi thang nay
             views:{
                 'content@':{

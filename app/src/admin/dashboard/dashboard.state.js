@@ -10,7 +10,7 @@ angular.module('myApp')
                 'content@':{
                     templateUrl:'src/admin/dashboard/dashboard.html',
                     controller:'DashboardController'
-                },
+                }
             }
         })
     });

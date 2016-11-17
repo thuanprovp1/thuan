@@ -1,8 +1,8 @@
 angular.module('myApp')
-    .controller('CategoryController', function ($scope, CategoryFactory, DataTable) {
+    .controller('GroupController', function ($scope, GroupFactory, DataTable) {
 
         //factory API
-        CategoryFactory.fetchAllProducts()
+        GroupFactory.fetchAllProducts()
             .then(function (response) {
                 $scope.products = response.data;
             })
@@ -12,11 +12,11 @@ angular.module('myApp')
 
         //DataTables
         var options = {
-            url: 'http://localhost:8081/category/fetch',
+            url: 'http://localhost:8081/group/fetch',
             columns: [
                 {'title': 'Id', 'data': '_id'},
-                {'title': 'Code', 'data': 'code'},
-                {'title': 'Name', 'data': 'name'},
+                {'title': 'Group Type', 'data': 'grouptype'},
+                {'title': 'Product Id', 'data': 'product'},
                 {'title': 'Create Date', 'data': 'createdAt',"defaultContent":"Not available"},
                 {'title': 'Modifined Date', 'data': 'updatedAt',"defaultContent":"Not available"},
                 {'title': 'Action', 'data': null}
@@ -31,6 +31,6 @@ angular.module('myApp')
                 }
             ]
         };
-        DataTable.generateDataTable(options, angular.element('#category_table'));
+        DataTable.generateDataTable(options, angular.element('#group_table'));
 
     });

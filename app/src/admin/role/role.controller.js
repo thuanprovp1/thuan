@@ -9,14 +9,16 @@ angular.module('myApp')
             .catch(function () {
                 $scope.products = [];
             });
-
+            
         //DataTables
+        
         var options = {
             url: 'http://localhost:8081/role/fetch',
             columns: [
                 {'title': 'Id', 'data': '_id'},
                 {'title': 'Name', 'data': 'name'},
-                {'title': 'Last Modified', 'data': 'lastModified',"defaultContent":"Not available"},
+                {'title': 'Create Date', 'data': 'createdAt',"defaultContent":"Not available"},
+                {'title': 'Modifined Date', 'data': 'updatedAt',"defaultContent":"Not available"},
                 {'title': 'Action', 'data': null}
             ],
             columnDefs: [
@@ -25,7 +27,7 @@ angular.module('myApp')
                         return '<button class="btn btn-danger" id="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>'
                             + '<button class="btn btn-info"   id="btn-edit"  ><i class="fa fa-pencil" aria-hidden = "true"></i></button>'
                     },
-                    "targets": 3    
+                    "targets": 4 
                 }
             ]
         };
