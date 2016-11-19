@@ -21,8 +21,10 @@ angular.module('myApp')
                 {'title': 'Code', 'data': 'code'},
                 {'title': 'Name', 'data': 'name'},
                 {'title': 'Price', 'data': 'price'},
-                {'title': 'Category', 'data': 'category',"defaultContent":"Not available"},
-                {'title': 'User', 'data': 'user',"defaultContent":"Not available"},
+                {'title': 'Category Code', 'data': 'category.code',"defaultContent":"Not available"},
+                {'title': 'Category Name', 'data': 'category.name',"defaultContent":"Not available"},
+                {'title': 'User Name', 'data': 'user.username',"defaultContent":"Not available"},
+                {'title': 'Password', 'data': 'user.password',"defaultContent":"Not available"},
                 {'title': 'Create Date', 'data': 'createdAt',"defaultContent":"Not available"},
                 {'title': 'Modifined Date', 'data': 'updatedAt',"defaultContent":"Not available"},
                 {'title': 'Action', 'data': null}
@@ -33,7 +35,7 @@ angular.module('myApp')
                         return '<button class="btn btn-danger" id="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>'
                             + '<button class="btn btn-info"   id="btn-edit"  ><i class="fa fa-pencil" aria-hidden = "true"></i></button>'
                     },
-                    "targets": 8
+                    "targets": 10
                 }
             ]
         };

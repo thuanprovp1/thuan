@@ -18,8 +18,16 @@
                 <li><a href="#">Tables</a></li>
             </ul>
             <!--<button class="btn btn-info" ng-click="resizeWd()">Add new</a></button></br></br>-->
-            <button type="button" class="btn btn-success">Add New</button>
 
+            <!--BUTTON FLOATING-->
+            <div class="fixed-action-btn horizontal">
+                <a class="btn-floating btn-large red">
+                    <i class="large material-icons"><span class="fa fa-plus"></span></i>
+                </a>
+            </div>
+            <!--BUTTON FLOATING END-->
+
+            <div style="overflow-x: auto">
             <!--Datatable-->
             <table id="example" class="display" width="100%">
                 <tr>
@@ -32,7 +40,7 @@
                     <th>Action</th>
                 </tr>
             </table>
-
+            </div>
         </div>
         <!-- end: Content -->
     </div><!--/#content.span10-->

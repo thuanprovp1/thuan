@@ -11,12 +11,18 @@ angular.module('myApp')
             });
             element.on('click', '#btn-delete', function () {
                 var obj = table.row($(this).parents('tr')).data();
-                alert('Delete ' +obj.name);
+                options.delete.call(null, obj);
             });
             element.on('click', '#btn-edit', function () {
                 var obj = table.row($(this).parents('tr')).data();
-                console.log(obj);
-                alert('edit ' + obj.name);
-            })
+                options.edit.call(null, obj);
+            });
+
+            // element.on( 'orderable,searchable', function () {
+            //     element.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            //         cell.innerHTML = i+1;
+            //     } );
+            // } ).draw();
+
         };
     });

@@ -18,20 +18,32 @@
                 <li><a href="#">Tables</a></li>
             </ul>
             <!--<button class="btn btn-info" ng-click="resizeWd()">Add new</a></button></br></br>-->
-            <button type="button" class="btn btn-success">Add New</button>
 
+            <!--BUTTON FLOATING-->
+            <div class="fixed-action-btn horizontal" data-toggle="modal" data-target="#groupModal" data-whatever="@mdo" ng-click="addNew()">
+                <a class="btn-floating btn-large red">
+                    <i class="large material-icons"><span class="fa fa-plus"></span></i>
+                </a>
+            </div>
+
+            <div class="bd-example" ng-include="'src/admin/group/form-group.html'">
+            </div>
+            <!--BUTTON FLOATING END-->
             <!--Datatable-->
-            <table id="group_table" class="display" width="100%">
-                <tr>
-                    <th>Id</th>
-                    <th>Group Type</th>
-                    <th>Product Id</th>
-                    <th>Create Date</th>
-                    <th>Modifined Date</th>
-                    <th>Action</th>
-                </tr>
-            </table>
-
+            <div style="overflow-x: auto">
+                <table id="group_table" class="display" width="100%">
+                    <tr>
+                        <th>Id</th>
+                        <th>Group Type Code</th>
+                        <th>Product Code</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Create Date</th>
+                        <th>Modifined Date</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
         </div>
         <!-- end: Content -->
     </div><!--/#content.span10-->

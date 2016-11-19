@@ -1,22 +1,21 @@
-//Modal
-<div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background:transparent;overflow: visible;box-shadow: none;border: none">
+<div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background:transparent;overflow: visible;box-shadow: none;border: none">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="exampleModalLabel">New Category</h4>
+                <h4 class="modal-title" id="exampleModalLabel">New Group</h4>
             </div>
             <div class="modal-body">
                 <form action="">
                     <div class="form-group">
-                        <label for="recipient-code" class="form-control-label"><h5>Code:</h5></label>
-                        <input type="text" class="form-control" id="recipient-code" placeholder="Type a code" ng-model="category.code">
+                        <label for="recipient-group-type" class="form-control-label"><h5>Group Type:</h5></label>
+                        <input type="text" class="form-control" id="recipient-group-type" placeholder="Type a code" ng-model="group.grouptype">
                     </div>
                     <div class="form-group">
-                        <label for="recipient-name" class="form-control-label"><h5>Name:</h5></label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="Type a name" ng-model="category.name">
+                        <label for="recipient-product" class="form-control-label"><h5>Product:</h5></label>
+                        <input type="text" class="form-control" id="recipient-product" placeholder="Type a code" ng-model="group.product">
                     </div>
                 </form>
             </div>

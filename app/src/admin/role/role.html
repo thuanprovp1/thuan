@@ -18,10 +18,22 @@
                 <li><a href="#">Tables</a></li>
             </ul>
             <!--<button class="btn btn-info" ng-click="resizeWd()">Add new</a></button></br></br>-->
-            <button type="button" class="btn btn-success">Add New</button>
+
+            <!--BUTTON FLOATING-->
+            <div class="fixed-action-btn horizontal" data-toggle="modal" data-target="#roleModal" data-whatever="@mdo" ng-click="addNew()">
+                <a class="btn-floating btn-large red">
+                    <i class="large material-icons"><span class="fa fa-plus"></span></i>
+                </a>
+            </div>
+            <!--BUTTON FLOATING END-->
+
+            <!--MODAL BEGIN-->
+            <div class="bd-example" ng-include="'src/admin/role/role.form.html'">
+            </div>
+            <!--MODAL END-->
 
             <!--Datatable-->
-            <!--<div ng-include="'src/admin/role/role.list.html'"></div>-->
+            <div style="overflow-x: auto">
             <table id="role_table" class="display" width="100%">
                 <tr>
                     <th>Id</th>
@@ -31,6 +43,7 @@
                     <th>Action</th>
                 </tr>
             </table>
+                </div>
         </div>
         <!-- end: Content -->
     </div><!--/#content.span10-->
