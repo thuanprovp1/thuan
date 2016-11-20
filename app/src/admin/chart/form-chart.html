@@ -1,57 +1,44 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<form style="position: relative;left:10px;width:300px" name="form-category">
-    <fieldset>
-        <legend>Add New</legend>
-        <div class="form-group">
-            <label for="barcode">Barcode</label>
-            <input type="text" class="form-control" id="barcode" placeholder="Barcode" ng-model="user.barcode"
-                   name="barcode">
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background:transparent;overflow: visible;box-shadow: none;border: none">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">New Group</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="recipient-code" class="form-control-label"><h5>Code:</h5></label>
+                        <input type="text" class="form-control" id="recipient-code" placeholder="Type a code" ng-model="product.code">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="form-control-label"><h5>Name:</h5></label>
+                        <input type="text" class="form-control" id="recipient-name" placeholder="Type a name" ng-model="product.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-price" class="form-control-label"><h5>Price:</h5></label>
+                        <input type="text" class="form-control" id="recipient-price" placeholder="Type a price" ng-model="product.price">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-url" class="form-control-label"><h5>Url Image:</h5></label>
+                        <input type="text" class="form-control" id="recipient-url" placeholder="Type a url image" ng-model="product.url" value="resource-admin/img/">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-category" class="form-control-label"><h5>Caegory:</h5></label>
+                        <input type="text" class="form-control" id="recipient-category" placeholder="Type a category" ng-model="product.category">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-user" class="form-control-label"><h5>User:</h5></label>
+                        <input type="text" class="form-control" id="recipient-user" placeholder="Type a user" ng-model="product.user">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="save()">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name"
-                   ng-model="user.name"
-                   name="name">
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" class="form-control" id="price" placeholder="Price"
-                   ng-model="user.price"
-                   name="price">
-        </div>
-        <div class="form-group">
-            <label for="category-id">Category Id</label>
-            <input type="text" class="form-control" id="category-id" placeholder="Category Id"
-                   ng-model="user.catgory-id"
-                   name="category-id">
-        </div>
-        <div class="form-group">
-            <label for="user-id">User Id</label>
-            <input type="text" class="form-control" id="user-id" placeholder="User Id"
-                   ng-model="user.user-id"
-                   name="user-id">
-        </div>
-        <div class="form-group">
-            <label for="created-date">Create Date</label>
-            <input type="text" class="form-control" id="created-date" placeholder="Creaete Date"
-                   ng-model="user.created-date"
-                   name="created-date">
-        </div>
-        <div class="form-group">
-            <label for="modified-date">Modified Date</label>
-            <input type="text" class="form-control" id="modified-date" placeholder="Modified Date"
-                   ng-model="user.modified-date"
-                   name="modified-date">
-        </div>
-        <div class="form-group">
-            <label for="url-img">Image url</label>
-            <input type="text" class="form-control" id="url-img" placeholder="Image url"
-                   ng-model="user.url-img"
-                   name="url-img">
-        </div>
-        <button type="submit" class="btn btn-primary" ng-click="">Submit</button>
-    </fieldset>
-</form>
+    </div>
 </div>

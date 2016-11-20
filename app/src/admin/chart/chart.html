@@ -32,12 +32,14 @@
                     </div>
 
                     <!--BUTTON FLOATING-->
-                    <div class="fixed-action-btn horizontal">
+                    <div class="fixed-action-btn horizontal" data-toggle="modal" data-target="#productModal" data-whatever="@mdo" ng-click="addNew()">
                         <a class="btn-floating btn-large red">
                             <i class="large material-icons"><span class="fa fa-plus"></span></i>
                         </a>
                     </div>
                     <!--BUTTON FLOATING END-->
+                    <div class="bd-example" ng-include="'src/admin/chart/form-chart.html'">
+                    </div>
 
                     <div class="box-content" style="overflow-x:auto">
                             <table id="product_table" class="display" width="100%">
