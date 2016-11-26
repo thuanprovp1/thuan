@@ -1,7 +1,25 @@
 angular.module('myApp')
-    .controller('GroupController', function ($scope, GroupFactory, DataTable,GroupService) {
-
+    .controller('GroupController', function ($scope, GroupFactory, DataTable, GroupService) {
         //factory API
+        //fetch du lieu tu grouptype
+        GroupService.fetchGroupType()
+            .then(function (response) {
+                $scope.grouptypes = response.data;
+                console.log($scope.grouptypes);
+            })
+            .catch(function (err) {
+                console.log(err.toString);
+        });
+
+        GroupService.fetchProduct()
+            .then(function (response) {
+                $scope.products = response.data;
+                console.log($scope.product);
+            })
+            .catch(function (err) {
+                console.log(err.toString);
+            });
+        console.log($scope.grouptype);
         $scope.edit = function (data) {
             $scope.$apply(function () {
                 $scope.group = data;
@@ -30,7 +48,7 @@ angular.module('myApp')
         };
         //khi click vào nút save
         $scope.save = function (data) {
-
+            console.log(data);
             //kiểm tra có id ko,có thì update,ko thì create
             var checkIdExit = ($scope.group._id ) ? GroupService.updateGroup : GroupService.createGroup;
 
@@ -46,14 +64,14 @@ angular.module('myApp')
                     console.log(err.toString);
                 })
         };
-        
-        GroupFactory.fetchAllProducts()
-            .then(function (response) {
-                $scope.products = response.data;
-            })
-            .catch(function () {
-                $scope.products = [];
-            });
+
+        // GroupFactory.fetchAllProducts()
+        //     .then(function (response) {
+        //         $scope.products = response.data;
+        //     })
+        //     .catch(function () {
+        //         $scope.products = [];
+        //     });
 
         //DataTables
         var loadGroup = function () {

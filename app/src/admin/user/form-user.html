@@ -19,7 +19,9 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-role" class="form-control-label"><h5>Role:</h5></label>
-                        <input type="text" class="form-control" id="recipient-role" placeholder="Type a role" ng-model="user.role">
+                        <select class="form-control" name="recipient-role" id="recipient-role" ng-model="user.role">
+                            <option ng-repeat="role in roles.data" value="{{role._id}}" >{{role.name}}</option>
+                        </select>
                     </div>
                 </form>
             </div>

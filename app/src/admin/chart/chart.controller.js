@@ -3,6 +3,24 @@
  */
 angular.module('myApp')
     .controller('ChartController', function ($scope, TableHangHoa,DataTable,ProductService) {
+        //fetch data category
+        ProductService.fetchCategory()
+            .then(function (response) {
+                $scope.categories = response.data;
+                console.log($scope.categories);
+            })
+            .catch(function (err) {
+               alert('Khong load duoc category' + {message:err});
+            });
+        //fetch data từ user
+        ProductService.fetchUser()
+            .then(function (response) {
+                $scope.users = response.data;
+                console.log($scope.users);
+            })
+            .catch(function (err) {
+                alert('Khong load duoc user' + {message:err});
+            });
 
         $scope.edit = function (data) {
             $scope.$apply(function () {

@@ -16,4 +16,10 @@ angular.module('myApp')
         this.deleteProduct = function (data) {
             return $http.get([url, 'delete?id=', data].join(''))
         };
+        this.fetchCategory = function () {
+            return $http.get([API_URL,'category/fetch'].join(''))
+        };
+        this.fetchUser = function () {
+            return $http.get([API_URL,'user/fetch'].join(''))
+        }
     });

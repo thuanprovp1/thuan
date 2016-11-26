@@ -16,4 +16,7 @@ angular.module('myApp')
         this.deleteUser = function (data) {
             return $http.get([url, 'delete?id=', data].join(''))
         };
+        this.fetchRole = function () {
+            return $http.get('http://localhost:8081/role/fetch');
+        }
     });

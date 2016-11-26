@@ -1,4 +1,5 @@
-<div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background:transparent;overflow: visible;box-shadow: none;border: none">
+<div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true" style="background:transparent;overflow: visible;box-shadow: none;border: none">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,13 +10,29 @@
             </div>
             <div class="modal-body">
                 <form action="">
+                    <!--<div class="form-group">-->
+                        <!--<label for="recipient-group-type" class="form-control-label"><h5>Group Type:</h5></label>-->
+                        <!--<input type="text" class="form-control" id="recipient-group-type" placeholder="Type a code"-->
+                               <!--ng-model="group.grouptype">-->
+                    <!--</div>-->
                     <div class="form-group">
-                        <label for="recipient-group-type" class="form-control-label"><h5>Group Type:</h5></label>
-                        <input type="text" class="form-control" id="recipient-group-type" placeholder="Type a code" ng-model="group.grouptype">
+                        <label for="recipient-group-type" class="form-control-label"><h5>Product:</h5></label>
+                        <select class="form-control" name="recipient-product" id="recipient-group-type" ng-model="group.grouptype">
+                            <option ng-repeat="grouptype in grouptypes.data" value="{{grouptype._id}}" >{{grouptype.code}}</option>
+                        </select>
+
                     </div>
+                    <!--<div class="form-group">-->
+                        <!--<label for="recipient-product" class="form-control-label"><h5>Product:</h5></label>-->
+                        <!--<input type="text" class="form-control" id="recipient-product" placeholder="Type a code"-->
+                               <!--ng-model="group.product">-->
+                    <!--</div>-->
+
                     <div class="form-group">
                         <label for="recipient-product" class="form-control-label"><h5>Product:</h5></label>
-                        <input type="text" class="form-control" id="recipient-product" placeholder="Type a code" ng-model="group.product">
+                        <select class="form-control" name="recipient-product" id="recipient-product" ng-model="group.product">
+                            <option ng-repeat="product in products.data" value="{{product._id}}" >{{product.code}}</option>
+                        </select>
                     </div>
                 </form>
             </div>

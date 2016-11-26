@@ -52,7 +52,7 @@ angular.module('myApp')
             var options = {
                 url: [API_URL, 'group-type/fetch'].join(''),
                 columns: [
-                    {'title': 'Id', 'data': null},
+                    {'title': 'Id','data':null},
                     {'title': 'Code', 'data': 'code', "defaultContent": "Not available"},
                     {'title': 'Create Date', 'data': 'createdAt', "defaultContent": "Not available"},
                     {'title': 'Modifined Date', 'data': 'updatedAt', "defaultContent": "Not available"},
@@ -66,12 +66,6 @@ angular.module('myApp')
                         },
                         "targets": 4
                     },
-                    {
-                        "render": function (data, type, row) {
-                            return '#'
-                        },
-                        "targets": 0
-                    }
                 ]
             };
 

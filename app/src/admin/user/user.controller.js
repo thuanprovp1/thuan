@@ -1,6 +1,14 @@
 angular.module('myApp')
     .controller('UserController', function ($scope, UserFactory, DataTable, UserService) {
-
+        //fetch du lieu Role
+        UserService.fetchRole()
+            .then(function (response) {
+                $scope.roles = response.data;
+                console.log($scope.roles);
+            })
+            .catch(function (err) {
+               alert('Load role that bai' + {message:err}); 
+            });
         $scope.edit = function (data) {
             $scope.$apply(function () {
                 $scope.user = data;
@@ -11,6 +19,7 @@ angular.module('myApp')
         $scope.addNew = function () {
             $scope.user = {}
         };
+        
 
         //xóa object
         $scope.delete = function (data) {

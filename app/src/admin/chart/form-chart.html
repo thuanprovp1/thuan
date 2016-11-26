@@ -25,14 +25,28 @@
                         <label for="recipient-url" class="form-control-label"><h5>Url Image:</h5></label>
                         <input type="text" class="form-control" id="recipient-url" placeholder="Type a url image" ng-model="product.url" value="resource-admin/img/">
                     </div>
+                    <!--<div class="form-group">-->
+                        <!--<label for="recipient-category" class="form-control-label"><h5>Caegory:</h5></label>-->
+                        <!--<input type="text" class="form-control" id="recipient-category" placeholder="Type a category" ng-model="product.category">-->
+                    <!--</div>-->
                     <div class="form-group">
-                        <label for="recipient-category" class="form-control-label"><h5>Caegory:</h5></label>
-                        <input type="text" class="form-control" id="recipient-category" placeholder="Type a category" ng-model="product.category">
+                        <label for="recipient-category" class="form-control-label"><h5>Category:</h5></label>
+                        <select class="form-control" name="recipient-role" id="recipient-category" ng-model="product.category">
+                            <option ng-repeat="category in categories.data" value="{{category._id}}" >{{category.name}}</option>
+                        </select>
                     </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<label for="recipient-user" class="form-control-label"><h5>User:</h5></label>-->
+                        <!--<input type="text" class="form-control" id="recipient-user" placeholder="Type a user" ng-model="product.user">-->
+                    <!--</div>-->
                     <div class="form-group">
                         <label for="recipient-user" class="form-control-label"><h5>User:</h5></label>
-                        <input type="text" class="form-control" id="recipient-user" placeholder="Type a user" ng-model="product.user">
+                        <select class="form-control" name="recipient-user" id="recipient-user" ng-model="product.user">
+                            <option ng-repeat="user in users.data" value="{{user._id}}" >{{user.username}}</option>
+                        </select>
                     </div>
+                    {{product}}
                 </form>
             </div>
             <div class="modal-footer">
