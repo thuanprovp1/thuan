@@ -24,8 +24,8 @@ angular.module('myApp', ['ui.router','LocalStorageModule'])
     .run(function ($rootScope,AuthService,$state) {
         $rootScope.$on('$stateChangeSuccess', function (object,state) {
             document.body.scrollTop = document.documentElement.scrollTop = 0;
-            if(!AuthService.isAuthenticated && state.url.indexOf('admin')>=0){
-                $state.go('login-admin');
-            }
+            // if(!AuthService.isAuthenticated && state.url.indexOf('admin')>=0){
+            //     $state.go('login-admin');
+            // }
         });
     });

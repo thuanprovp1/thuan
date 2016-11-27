@@ -23,6 +23,8 @@ angular.module('myApp')
         $scope.edit = function (data) {
             $scope.$apply(function () {
                 $scope.group = data;
+                $scope.group.product = $scope.group.product._id;
+                $scope.group.grouptype = $scope.group.grouptype._id;
             });
         };
 
