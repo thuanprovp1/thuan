@@ -4,7 +4,7 @@
 angular.module('myApp')
     .config(function ($stateProvider) {
         $stateProvider.state('login-admin',{
-            url:'/admin/login-admin',
+            url:'/login-admin',
             views:{
                 'content@':{
                     templateUrl:'src/admin/login/login.html',
