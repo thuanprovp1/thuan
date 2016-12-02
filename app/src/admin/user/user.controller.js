@@ -7,11 +7,14 @@ angular.module('myApp')
                 console.log($scope.roles);
             })
             .catch(function (err) {
-               alert('Load role that bai' + {message:err}); 
+                alert('Load role that bai' + {message: err});
             });
+
+
         $scope.edit = function (data) {
             $scope.$apply(function () {
-                $scope.user = data;
+                $scope.user = angular.copy(data);
+                $scope.user.role = $scope.user.role._id;
             });
         };
 
@@ -19,7 +22,7 @@ angular.module('myApp')
         $scope.addNew = function () {
             $scope.user = {}
         };
-        
+
 
         //xóa object
         $scope.delete = function (data) {
@@ -54,7 +57,7 @@ angular.module('myApp')
                     console.log(err.toString);
                 })
         };
-        
+
         UserFactory.fetchAllProducts()
             .then(function (response) {
                 $scope.products = response.data;
@@ -78,7 +81,7 @@ angular.module('myApp')
                     {
                         "render": function (data, type, row) {
                             return '<button class="btn btn-danger" id="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>'
-                                +  '<button class="btn btn-info"   id="btn-edit"  ' +
+                                + '<button class="btn btn-info"   id="btn-edit"  ' +
                                 'data-toggle="modal" data-target="#userModal" data-whatever="@mdo">' +
                                 '<i class="fa fa-pencil" aria-hidden = "true"></i></button>'
                         },

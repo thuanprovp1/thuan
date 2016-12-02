@@ -22,10 +22,11 @@ angular.module('myApp', ['ui.router','LocalStorageModule'])
             .setNotify(true, true);
     })
     .run(function ($rootScope,AuthService,$state) {
-        $rootScope.$on('$stateChangeSuccess', function (object,state) {
+        $rootScope.$on('$stateChangeSuccess',function (object,state) {
+            // '$stateChangeSuccess',
             document.body.scrollTop = document.documentElement.scrollTop = 0;
-            // if(!AuthService.isAuthenticated && state.url.indexOf('admin')>=0){
-            //     $state.go('login-admin');
-            // }
+            if(!AuthService.isAuthenticated && state.url.indexOf('admin')>=0){
+                $state.go('login-admin');
+            }
         });
     });

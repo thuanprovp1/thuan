@@ -2,7 +2,7 @@
  * Created by Huong on 9/9/2016.
  */
 angular.module('myApp')
-    .controller('ChartController', function ($scope, TableHangHoa,DataTable,ProductService) {
+    .controller('ChartController', function ($scope, TableHangHoa, DataTable, ProductService) {
         //fetch data category
         ProductService.fetchCategory()
             .then(function (response) {
@@ -10,7 +10,7 @@ angular.module('myApp')
                 console.log($scope.categories);
             })
             .catch(function (err) {
-               alert('Khong load duoc category' + {message:err});
+                alert('Khong load duoc category' + {message: err});
             });
         //fetch data từ user
         ProductService.fetchUser()
@@ -19,12 +19,17 @@ angular.module('myApp')
                 console.log($scope.users);
             })
             .catch(function (err) {
-                alert('Khong load duoc user' + {message:err});
+                alert('Khong load duoc user' + {message: err});
             });
 
         $scope.edit = function (data) {
             $scope.$apply(function () {
-                $scope.product = data;
+                $scope.product = angular.copy(data);
+                $scope.product.category = $scope.product.category._id;
+                if ($scope.product.user == null)
+                    console.log("user ko ton tai");
+                else
+                    $scope.product.user = $scope.product.user._id;
             });
         };
 
@@ -66,9 +71,8 @@ angular.module('myApp')
                     console.log(err.toString);
                 })
         };
-        
-        
-        
+
+
         TableHangHoa.fetchAllProducts()
             .then(function (response) {
                 $scope.products = response.data;
@@ -76,7 +80,7 @@ angular.module('myApp')
             .catch(function () {
                 $scope.products = [];
             });
-        
+
         $scope.refeshPage = function () {
             $router.reload();
         };

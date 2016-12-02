@@ -22,7 +22,7 @@ angular.module('myApp')
         console.log($scope.grouptype);
         $scope.edit = function (data) {
             $scope.$apply(function () {
-                $scope.group = data;
+                $scope.group = angular.copy(data);
                 $scope.group.product = $scope.group.product._id;
                 $scope.group.grouptype = $scope.group.grouptype._id;
             });
