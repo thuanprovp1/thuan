@@ -7,8 +7,6 @@ angular.module('myApp')
             restrict: 'E',
             link: function (scope, element) {
                 element.niceScroll();
-                var miao = element.niceScroll();
-                console.log(miao);
             }
         }
     });

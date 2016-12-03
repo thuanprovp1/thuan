@@ -12,12 +12,19 @@ angular.module('myApp')
             .then(function (response) {
                 localStorageService.set('user',response.data);
                 isAuthenticated = true;
+                alert('Login success');
                 if(type == 'admin'){
                     $state.go('admin')
                 }
+
+                if(type == 'user'){
+                    $state.go('home')
+                }
+
             })
                 .catch(function (err) {
-                    alert(err.toString());
+                    console.log(err);
+                    alert(err.data.message);
                 })
         };
         var logout = function () {

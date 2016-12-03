@@ -65,19 +65,20 @@ angular.module('myApp')
                     {'title': 'Name', 'data': 'name'},
                     {'title': 'Create Date', 'data': 'createdAt', "defaultContent": "Not available"},
                     {'title': 'Modifined Date', 'data': 'updatedAt', "defaultContent": "Not available"},
-                    {'title': 'Action', 'data': null}
-                ],
-                columnDefs: [
-                    {
-                        "render": function (data, type, row) {
-                            return '<button class="btn btn-danger" id="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>'
-                                + '<button class="btn btn-info"   id="btn-edit"  ' +
-                                'data-toggle="modal" data-target="#roleModal" data-whatever="@mdo">' +
-                                '<i class="fa fa-pencil" aria-hidden = "true"></i></button>'
-                        },
-                        "targets": 4
-                    }
+                    // {'title': 'Action', 'data': null}
                 ]
+                // ,
+                // columnDefs: [
+                //     {
+                //         "render": function (data, type, row) {
+                //             return '<button class="btn btn-danger" id="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>'
+                //                 + '<button class="btn btn-info"   id="btn-edit"  ' +
+                //                 'data-toggle="modal" data-target="#roleModal" data-whatever="@mdo">' +
+                //                 '<i class="fa fa-pencil" aria-hidden = "true"></i></button>'
+                //         },
+                //         "targets": 4
+                //     }
+                // ]
             };
 
 
