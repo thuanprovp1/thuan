@@ -11,6 +11,7 @@ angular.module('myApp')
             password: ''
         };
         $rootScope.login = function () {
-            AuthService.login($scope.user,'admin');
+            AuthService.login($scope.user);
+            console.log(AuthService.isAuthenticated + "login"); 
         }
     });

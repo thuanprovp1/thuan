@@ -16,7 +16,7 @@ angular.module('myApp', ['ui.router','LocalStorageModule'])
             }
         );
         localStorageServiceProvider
-            .setPrefix('shopGiay')
+            .setPrefix('shopgiay')
             .setStorageType('sessionStorage')
             .setDefaultToCookie(false)
             .setNotify(true, true);
@@ -24,8 +24,9 @@ angular.module('myApp', ['ui.router','LocalStorageModule'])
     .run(function ($rootScope,AuthService,$state) {
         $rootScope.$on('$stateChangeSuccess',function (object,state) {
             // '$stateChangeSuccess',
+            console.log(AuthService.isAuthenticated + "app.js");
             document.body.scrollTop = document.documentElement.scrollTop = 0;
-            if(!AuthService.isAuthenticated && state.url.indexOf('admin')>=0){
+            if(AuthService.isAuthenticated == false && state.url.indexOf('admin')>0 ){
                 $state.go('login-admin');
             }
         });

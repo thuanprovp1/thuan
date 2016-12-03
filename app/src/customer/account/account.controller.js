@@ -11,12 +11,9 @@ angular.module('myApp')
             password :''
         };
         $rootScope.login = function () {
-            AuthService.login($scope.user,'user');  
+            AuthService.login($scope.user);
+            console.log(AuthService.isAuthenticated);
         };
-        
-
-
-
 
 
         // AccountFactory.fetchAllProducts()
