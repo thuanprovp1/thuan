@@ -3,16 +3,15 @@
  */
 angular.module('myApp')
     .controller('AccountController',function ($scope,AccountFactory,$state,AuthService,$rootScope) {
-        if(AuthService.isAuthenticated){
-            $state.go('home');
-        }
+        // if(AuthService.isAuthenticated()){
+        //     $state.go('home');
+        // }
         $scope.user = {
             username : '',
             password :''
         };
         $rootScope.login = function () {
             AuthService.login($scope.user);
-            console.log(AuthService.isAuthenticated);
         };
 
 

@@ -7,7 +7,6 @@ angular.module('myApp')
         ProductService.fetchCategory()
             .then(function (response) {
                 $scope.categories = response.data;
-                console.log($scope.categories);
             })
             .catch(function (err) {
                 alert('Khong load duoc category' + {message: err});
@@ -16,7 +15,6 @@ angular.module('myApp')
         ProductService.fetchUser()
             .then(function (response) {
                 $scope.users = response.data;
-                console.log($scope.users);
             })
             .catch(function (err) {
                 alert('Khong load duoc user' + {message: err});

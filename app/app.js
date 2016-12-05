@@ -1,8 +1,8 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', ['ui.router','LocalStorageModule'])
-    .config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider) {
+angular.module('myApp', ['ui.router','ngStorage'])
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         $urlRouterProvider.otherwise('/home');
         $stateProvider.state('site', {
                 views: {
@@ -15,18 +15,13 @@ angular.module('myApp', ['ui.router','LocalStorageModule'])
                 }
             }
         );
-        localStorageServiceProvider
-            .setPrefix('shopgiay')
-            .setStorageType('sessionStorage')
-            .setDefaultToCookie(false)
-            .setNotify(true, true);
+        $httpProvider.interceptors.push('AuthInterceptor');
     })
-    .run(function ($rootScope,AuthService,$state) {
-        $rootScope.$on('$stateChangeSuccess',function (object,state) {
+    .run(function ($rootScope, AuthService, $state) {
+        $rootScope.$on('$stateChangeSuccess', function (object, state) {
             // '$stateChangeSuccess',
-            console.log(AuthService.isAuthenticated + "app.js");
             document.body.scrollTop = document.documentElement.scrollTop = 0;
-            if(AuthService.isAuthenticated == false && state.url.indexOf('admin')>0 ){
+            if (!AuthService.isAuthenticated() && (state.url).indexOf('admin') > 0) {
                 $state.go('login-admin');
             }
         });

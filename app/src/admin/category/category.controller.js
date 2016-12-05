@@ -1,6 +1,5 @@
 angular.module('myApp')
     .controller('CategoryController', function ($scope, CategoryFactory,CategoryService, DataTable) {
-
         //bind dữ liệu từ datatables
         $scope.edit = function (data) {
             $scope.$apply(function () {
