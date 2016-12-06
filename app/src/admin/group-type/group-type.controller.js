@@ -25,7 +25,7 @@ angular.module('myApp')
                     angular.element('#group_type_table').DataTable().ajax.reload(null, false);
                 })
                 .catch(function (ex) {
-                    alert(err.toString())
+                    alert(ex.toString())
                 })
             ;
         };
@@ -65,7 +65,7 @@ angular.module('myApp')
                                 + '<button class="btn btn-info"   id="btn-edit"  data-toggle="modal" data-target="#groupTypeModal" data-whatever="@mdo"><i class="fa fa-pencil" aria-hidden = "true"></i></button>'
                         },
                         "targets": 4
-                    },
+                    }
                 ]
             };
 
