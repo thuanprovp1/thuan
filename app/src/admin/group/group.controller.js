@@ -5,19 +5,17 @@ angular.module('myApp')
         GroupService.fetchGroupType()
             .then(function (response) {
                 $scope.grouptypes = response.data;
-                console.log($scope.grouptypes);
             })
             .catch(function (err) {
-                console.log(err.toString);
+                alert(err.toString);
         });
 
         GroupService.fetchProduct()
             .then(function (response) {
                 $scope.products = response.data;
-                console.log($scope.product);
             })
             .catch(function (err) {
-                console.log(err.toString);
+                alert(err.toString);
             });
         console.log($scope.grouptype);
         $scope.edit = function (data) {

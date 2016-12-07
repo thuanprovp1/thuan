@@ -24,7 +24,7 @@ angular.module('myApp')
                     angular.element('#category_table').DataTable().ajax.reload(null, false);
                 })
                 .catch(function (ex) {
-                    alert(err.toString())
+                    alert(ex.toString())
                 })
             ;
         };

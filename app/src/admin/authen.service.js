@@ -41,22 +41,12 @@ angular.module('myApp')
                     isAuthenticated = true;
                     $localStorage.user = response.data.user;
                     storeUserToken(response.data.token);
-                    $state.go('dashboard');
-                    // let UserLogin = (localStorageService.get('user')).role.name;
-                    // console.log(UserLogin);
-                    //
-                    // alert('Login success');
-                    // if (UserLogin == 'admin') {
-                    //     $state.go('admin');
-                    // }
-                    // else if (UserLogin == 'mod') {
-                    //     $state.go('admin')
-                    // }
-                    // else {
-                    //     isAuthenticated = false;
-                    //     $state.go('home')
-                    // }
-                    
+                    if ($localStorage.user.role.name === 'admin' || $localStorage.user.role.name === 'mod') {
+                        $state.go('dashboard');
+                    }
+                    else {
+                        $state.go('home');
+                    }
                 })
                 .catch(function (err) {
                     console.log(err);
@@ -77,7 +67,7 @@ angular.module('myApp')
         };
 
         loadToken();
-        
+
         return {
             isAuthenticated: function () {
                 return isAuthenticated;

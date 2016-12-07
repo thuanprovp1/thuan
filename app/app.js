@@ -17,7 +17,7 @@ angular.module('myApp', ['ui.router','ngStorage'])
         );
         $httpProvider.interceptors.push('AuthInterceptor');
     })
-    .run(function ($rootScope, AuthService, $state) {
+    .run(function ($rootScope, AuthService, $state,$localStorage) {
         $rootScope.$on('$stateChangeSuccess', function (object, state) {
             // '$stateChangeSuccess',
             document.body.scrollTop = document.documentElement.scrollTop = 0;

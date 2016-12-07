@@ -6,7 +6,7 @@ angular.module('myApp')
         return {
             request: request
         };
-
+        
         function request(config) {
             if (config.url.indexOf(API_URL) >= 0) {
                 config.headers = config.headers || {};

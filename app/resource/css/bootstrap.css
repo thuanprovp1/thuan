@@ -4163,7 +4163,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   color: #E74C3C;
-  background-color: none;
+  background-color: #fff;
   border-color: #ddd;
 }
 .pagination > .active > a,
@@ -4964,13 +4964,42 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #1B242F;
+  border-color: #337ab7;
+  line-height: 40px;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #1B242F;
-  border-color: #1B242F;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
+.panel-green {
+  border-color: #5cb85c;
+  line-height: 40px;
+}
+.panel-green > .panel-heading {
+  border-color: #5cb85c;
+  color: white;
+  background-color: #5cb85c;
+}
+.panel-yellow {
+  border-color: #f0ad4e;
+  line-height: 40px;
+}
+.panel-yellow > .panel-heading {
+  border-color: #f0ad4e;
+  color: white;
+  background-color: #f0ad4e;
+}
+.panel-red {
+  border-color: #d9534f;
+  line-height: 40px;
+}
+.panel-red > .panel-heading {
+  border-color: #d9534f;
+  color: white;
+  background-color: #d9534f;
+}
+
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #1B242F;
 }
@@ -5033,6 +5062,10 @@ a.list-group-item-danger.active:focus {
 .panel-danger > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #ebccd1;
 }
+.huge{
+  font-size:40px;
+}
+
 .well {
   min-height: 20px;
   padding: 19px;
